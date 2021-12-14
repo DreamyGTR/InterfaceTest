@@ -1,6 +1,5 @@
 package com.example.entity;
 
-import com.example.mapper.InterFaceMapper;
 import lombok.Data;
 import lombok.ToString;
 

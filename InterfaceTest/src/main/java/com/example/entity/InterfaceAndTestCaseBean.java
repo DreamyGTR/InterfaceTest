@@ -11,4 +11,5 @@ public class InterfaceAndTestCaseBean {
         private Integer caseId;
         private String caseHeader;
         private String caseBody;
+        private String expectResult;
 }

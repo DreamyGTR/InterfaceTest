@@ -1,4 +1,4 @@
-package java.com.example.interfacetest;
+package com.example.interfacetest;
 
 import com.example.DemoApplication;
 import org.springframework.boot.test.context.SpringBootTest;

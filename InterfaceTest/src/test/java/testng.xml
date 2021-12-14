@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="用户管理系统测试套件">
+    <test name="冒烟测试">
+        <classes>
+            <class name="com.example.interfacetest.Test1">
+                <mothods>
+                    <include name="testJson"></include>
+                    <include name="testJson1"></include>
+                    <include name="testKuaiFan"></include>
+                    <include name="test11"></include>
+                    <include name="testKuaiFan2"></include>
+                </mothods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="com.example.util.ExtentTestNGIReporterListener" />
+    </listeners>
+
+</suite>

@@ -2,5 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.mapper.InterfaceAndTestCaseBeanMapper">
+<!--    <resultMap id="InterfaceAndTestCase" type="com.example.entity.InterfaceAndTestCaseBean">-->
+<!--        <result property="interfaceId" column="interface.id"/>-->
+<!--        <result property="interfaceMethod" column="method"/>-->
+<!--        <result property="interfaceName" column="name"/>-->
+<!--        <result property="interfaceUrl" column="url"/>-->
+<!--        <result property="caseId" column="test_case.id"/>-->
+<!--        <result property="caseHeader" column="header"/>-->
+<!--        <result property="caseBody" column="body"/>-->
+<!--    </resultMap>-->
+    <select id="getInterfaceAndTestCaseBeanByInterfaceId"
+            resultType="com.example.entity.InterfaceAndTestCaseBean" parameterType="Integer">
+    SELECT itf.id as interfaceId,itf.method as interfaceMethod,itf.name as interfaceName,
+    itf.url as interfaceUrl,ifc.case_id as caseId,ifc.interface_id as interfaceId,
+    ifc.expect_result as expectResult ,tc.body as caseBody,tc.header as caseHeader FROM interface_case ifc inner JOIN interface itf
+    ON ifc.interface_id=itf.id
+    inner JOIN test_case tc
+    on ifc.case_id=tc.id
+    where tc.id=#{id};
+    </select>
 
 </mapper>
